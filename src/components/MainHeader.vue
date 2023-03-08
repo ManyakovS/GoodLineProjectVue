@@ -1,9 +1,9 @@
 <template>
     <header class="header" id="header">
-            <router-link to="/" class="header__icon">
+            <a href="/" class="header__icon">
                 <span class="header__img"/>
                 <p class="header__title">ЖИЛОЙ КОМПЛЕКС</p>
-            </router-link>
+            </a>
 
             <desc-nav v-if="!$isMobile()"></desc-nav>
             <mobile-nav v-else></mobile-nav>
@@ -40,6 +40,7 @@ $main-text-color: #ffffff80;
             background-repeat: no-repeat;
             width: 160px;
             height: 32px;
+            margin-bottom: 2vh;
             background-position-x: center;
             background-size: contain;
             background-image: url('../image/first-screen/HouseVOP.svg');

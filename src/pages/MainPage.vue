@@ -55,21 +55,13 @@
                 </div>
             </div>
 
-            <div class="map">
-                <div style="position:relative;overflow:hidden;">
-                    <a href="https://yandex.ru/maps/64/kemerovo/?utm_medium=mapframe&utm_source=maps" 
-                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Кемерово</a>
-                    <a href="https://yandex.ru/maps/64/kemerovo/house/proletarskaya_ulitsa_4/bE8YdgBlTUMBQFtvfX91c3pmZg==/?ll=86.076036%2C55.342701&utm_medium=mapframe&utm_source=maps&z=18.77" 
-                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Пролетарская улица, 4 — Яндекс Карты</a>
-                    <iframe v-if="!$isMobile()" src="https://yandex.ru/map-widget/v1/?ll=86.076036%2C55.342701&mode=whatshere&whatshere%5Bpoint%5D=86.075430%2C55.342658&whatshere%5Bzoom%5D=17&z=18.77" 
-                    width="760" height="560" frameborder="1" allowfullscreen="true" style="position:relative;">
-                </iframe>
-
-                <iframe v-else src="https://yandex.ru/map-widget/v1/?ll=86.076036%2C55.342701&mode=whatshere&whatshere%5Bpoint%5D=86.075430%2C55.342658&whatshere%5Bzoom%5D=17&z=18.77" 
-                width="300" height="200" frameborder="1" allowfullscreen="true" style="position:relative;">
-            </iframe>
-                </div>
-            </div>
+            <yandex-map :settings="settings" :coords="[55.349916, 86.091833]" :zoom="25" >
+                <ymap-marker 
+                :coords="[55.349916, 86.091833]"
+                marker-id="123" 
+                hint-content="НАШЕ ЗДАНИЕ" 
+              />
+            </yandex-map>
             
             <MainQuestions v-if="!$isMobile()" @addForm="addForm"></MainQuestions>
             
@@ -80,6 +72,7 @@
 </template>
 
 <script>
+import { yandexMap, ymapMarker } from 'vue-yandex-maps'
 import MainHeader from '@/components/MainHeader.vue'
 import MainPageDesc from '@/components/MainPageDesc.vue';
 import MainTestimonial from '@/components/MainTestimonial.vue';
@@ -90,7 +83,7 @@ import MainFooter from '@/components/MainFooter.vue';
 
 import {mapState} from 'vuex'
     export default {
-  components: { MainHeader, MainPageDesc, MainTestimonial, MainAppartaments ,CTA, MainQuestions, MainFooter },
+  components: { MainHeader, MainPageDesc, MainTestimonial, MainAppartaments ,CTA, MainQuestions, MainFooter,yandexMap, ymapMarker },
         data(){ 
         return {
             description:{
@@ -109,6 +102,14 @@ import {mapState} from 'vuex'
                     phone: '',
                     isVisible: undefined,
                 },
+            settings: {
+                apiKey: 'e55eed53-a8d5-452a-9e4b-41dab29ae2ba',
+                lang: 'ru_RU',
+                coordorder: 'latlong',
+                enterprise: false,
+                version: '2.1',
+                coords: [55.3456, 86.1682]
+                }
         }
     },
     computed: {
@@ -126,7 +127,11 @@ import {mapState} from 'vuex'
 
 <style lang="scss">
 @import "@/styles/variables";
-
+.ymap-container {
+    width: 60vw;
+    height: 50vh;
+    margin: 0 auto;
+}
 
 .page-container {
     min-height: 100vh;

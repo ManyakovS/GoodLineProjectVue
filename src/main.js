@@ -5,6 +5,8 @@ import router from './router/router'
 import store from '@/store';
 import Vue3TouchEvents from "vue3-touch-events";
 
+
+
 const app = createApp(App)
 
 app
