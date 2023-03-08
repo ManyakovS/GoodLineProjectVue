@@ -130,7 +130,7 @@ import {mapState} from 'vuex'
 .ymap-container {
     width: 60vw;
     height: 80vh;
-    margin: 0 auto;
+    margin: 0 auto 4vh auto;
 }
 
 .page-container {
@@ -276,7 +276,7 @@ import {mapState} from 'vuex'
     .ymap-container {
         width: 80vw;
         height: 35vh;
-        margin: 0 auto;
+        margin: 0 auto 4vh auto;
     }
     label {
         font-size: 0.8125rem;
