@@ -3,6 +3,8 @@
 ## Project setup
 ```
 npm install
+
+(Возможно будет ошибка, используйте код ниже)
 npm install vue-mobile-detection
 ```
 
