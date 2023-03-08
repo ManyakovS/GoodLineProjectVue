@@ -1,4 +1,17 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import VueMobileDetection from "vue-mobile-detection";
+import $ from 'jquery'
+import router from './router/router'
+import store from '@/store';
+import Vue3TouchEvents from "vue3-touch-events";
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app
+    .use(Vue3TouchEvents)
+    .use(store)
+    .use(router)
+    .use($)
+    .use(VueMobileDetection)
+    .mount('#app');
