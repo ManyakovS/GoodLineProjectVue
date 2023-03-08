@@ -273,6 +273,11 @@ import {mapState} from 'vuex'
 }
 
 @media (max-width: 1060px) {
+    .ymap-container {
+        width: 80vw;
+        height: 35vh;
+        margin: 0 auto;
+    }
     label {
         font-size: 0.8125rem;
     }
