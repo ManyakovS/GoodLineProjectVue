@@ -1,7 +1,7 @@
 <template>
     <header class="header" id="header">
-            <router-link to="/contacts" class="header__icon">
-                <span class="header__img" src="../image/first-screen/first-page-icon.png"/>
+            <router-link to="/" class="header__icon">
+                <span class="header__img"/>
                 <p class="header__title">ЖИЛОЙ КОМПЛЕКС</p>
             </router-link>
 
@@ -38,8 +38,8 @@ $main-text-color: #ffffff80;
     &__img {
             display: block;
             background-repeat: no-repeat;
-            width: 8vw;
-            height: 4vh;
+            width: 160px;
+            height: 32px;
             background-position-x: center;
             background-size: contain;
             background-image: url('../image/first-screen/HouseVOP.svg');

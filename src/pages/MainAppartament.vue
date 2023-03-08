@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import $ from 'jquery'
 import MainHeader from "@/components/MainHeader.vue"
 import MainFooter from "@/components/MainFooter.vue"
 
@@ -129,12 +128,6 @@ export default {
         },
     }
 }
-
-$(document).ready(function() {
-/*     $('.before').click(()=> {
-        console.log('')
-    }) */
-});
 
 </script>
     
