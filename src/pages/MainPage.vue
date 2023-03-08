@@ -55,11 +55,11 @@
                 </div>
             </div>
 
-            <yandex-map :settings="settings" :coords="[55.349916, 86.091833]" :zoom="25" >
+            <yandex-map :settings="settings" :coords="[55.342652, 86.075466]" :zoom="16" >
                 <ymap-marker 
-                :coords="[55.349916, 86.091833]"
+                :coords="[55.342652, 86.075466]"
                 marker-id="123" 
-                hint-content="НАШЕ ЗДАНИЕ" 
+                hint-content="HouseVOP" 
               />
             </yandex-map>
             
@@ -129,7 +129,7 @@ import {mapState} from 'vuex'
 @import "@/styles/variables";
 .ymap-container {
     width: 60vw;
-    height: 50vh;
+    height: 80vh;
     margin: 0 auto;
 }
 
